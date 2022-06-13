@@ -1,8 +1,10 @@
 <template>
-    <div>
+    <div class="home">
         <img src="../intern.png">
         <h1>Intern Sign Up</h1>
-        <Input />
+        <nav>
+            <Input />
+        </nav>
     </div>
 </template>
 
@@ -43,6 +45,10 @@ h1{
 img{
     margin-top: auto;
     margin-left: auto;
+}
+
+.home{
+    visibility: hidden;
 }
 }
 </style>

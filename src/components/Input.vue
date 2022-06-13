@@ -3,37 +3,37 @@
         <form>
             <div class="order0">
                 <label for="fullname">Full Name *</label>
-                <input type="text" id="fullname" class="form-input-name" required>
+                <input type="text" id="fullname" class="form-input-name">
                 <small>Teste</small>
             </div>
 
             <div class="order1">
                 <label for="email">Email *</label>
-                <input type="email" id="email" class="form-input-email" placeholder="foo@bar.com" required>
+                <input type="email" id="email" class="form-input-email" placeholder="foo@bar.com">
                 <small>Teste</small>
             </div>
 
             <div class="form-pb order3">
                 <label for="phone">Phone *</label>
-                <input type="tel" id="phone" class="form-input-phone" placeholder="(83) 00000-0000" required>
+                <input type="tel" id="phone" class="form-input-phone" placeholder="(83) 00000-0000">
                 <small>Teste</small>
             </div>
 
             <div class="order2">
                 <label for="password">Password *</label>
-                <input type="password" id="password" class="form-input-password" required>
+                <input type="password" id="password" class="form-input-password">
                 <small>Teste</small>
             </div>
 
             <div class="form-pb order4">
                 <label for="birthday">Birthday *</label>
-                <input type="date" id="birthday" class="form-input-birthday" value="yyyy/MM/dd" required>
+                <input type="date" id="birthday" class="form-input-birthday" value="yyyy/MM/dd">
                 <small>Teste</small>
             </div>
 
         
                 <div class="order5">
-                    <label><input type="checkbox" required class="form-input-inputbutton">I accept the terms and privacy</label>
+                    <label><input type="checkbox" class="form-input-inputbutton">I accept the terms and privacy</label>
                     <small>Teste</small>
                 </div>
                 <div class="order6">
@@ -45,6 +45,12 @@
 
 <script>
 
+export default{
+    name: 'Input',
+    data(){
+
+    }, 
+}
 </script>
 
 <style scoped>
@@ -162,6 +168,7 @@ font-weight: 400;
 font-size: 14px;
 line-height: 16px;
 color: #FF4B4B;
+visibility: hidden;
 }
 
 @media screen and (max-width: 600px) {
@@ -213,27 +220,27 @@ top: 690px;
 background: #0DBDBD;
 border-radius: 10px;
 margin-top: 70px;
-margin-left: 100px;
+margin-left: 90px;
 }
 
     .order0{
         order:0;
-        margin-left: 100px;
+        margin-left: 90px;
     }
 
     .order1{
         order:1;
-        margin-left: 100px;
+        margin-left: 90px;
     }
 
     .order2{
         order:2;
-        margin-left: 100px;
+        margin-left: 90px;
     }
 
     .order3{
         order:3;
-        margin-left: 100px;
+        margin-left: 90px;
     }
 
     .order4{
@@ -243,15 +250,13 @@ margin-left: 100px;
 
     .order5{
         order:5;
-        margin-left: 150px;
+        margin-left: 90px;
     }
 
     .order6{
         order:6;
-        margin-top: -40px;
+        margin-top: -55px;
     }
-
-
 
 }
 </style>

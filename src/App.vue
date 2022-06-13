@@ -1,10 +1,11 @@
 <template>
   <div id="app">
-    <nav>
       <section>
+        <router-view>
         <HomeView />
+        <Sucess />
+        </router-view>
       </section>
-    </nav>
   </div>
 </template>
 
