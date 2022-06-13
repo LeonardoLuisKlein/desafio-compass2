@@ -1,0 +1,39 @@
+<template>
+    <div>
+        <img src="image">
+        <h1>Intern Sign Up</h1>
+        <Input />
+    </div>
+</template>
+
+<script>
+    import Input from '../components/Input.vue'
+
+    export default{
+        name: 'HomeView',
+        components: {
+            Input,
+        },
+        data(){
+            return{
+                image: 'public/intern.png'
+            }
+        }
+    }
+</script>
+
+<style scoped>
+h1{
+    display: flex;
+    font-size: 2.25em;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    }
+
+img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+</style>
