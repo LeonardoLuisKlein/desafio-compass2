@@ -39,7 +39,7 @@ section{
   height: 763px;
   background: #FFFFFF;
   border-radius: 20px;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 </style>

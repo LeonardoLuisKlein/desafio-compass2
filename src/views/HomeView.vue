@@ -1,24 +1,20 @@
 <template>
     <div>
-        <img src="image">
+        <img src="../intern.png">
         <h1>Intern Sign Up</h1>
         <Input />
     </div>
 </template>
 
 <script>
-    import Input from '../components/Input.vue'
+import Input from '../components/Input.vue'
+
 
     export default{
         name: 'HomeView',
         components: {
             Input,
         },
-        data(){
-            return{
-                image: 'public/intern.png'
-            }
-        }
     }
 </script>
 
@@ -35,5 +31,6 @@ img{
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: auto
     }
 </style>

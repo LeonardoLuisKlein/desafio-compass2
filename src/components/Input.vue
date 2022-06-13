@@ -4,33 +4,39 @@
             <div>
                 <label for="fullname">Full Name *</label>
                 <input type="text" id="fullname" class="form-input-name" required>
+                <small>Teste</small>
             </div>
 
             <div>
                 <label for="email">Email *</label>
                 <input type="email" id="email" class="form-input-email" placeholder="foo@bar.com" required>
+                <small>Teste</small>
             </div>
 
             <div class="form-pb">
                 <label for="phone">Phone *</label>
                 <input type="tel" id="phone" class="form-input-phone" placeholder="(83) 00000-0000" required>
+                <small>Teste</small>
             </div>
 
             <div>
                 <label for="password">Password *</label>
                 <input type="password" id="password" class="form-input-password" required>
+                <small>Teste</small>
             </div>
 
             <div class="form-pb">
                 <label for="birthday">Birthday *</label>
                 <input type="date" id="birthday" class="form-input-birthday" value="yyyy/MM/dd" required>
+                <small>Teste</small>
             </div>
 
             <div class="Down">
-                <label><input type="checkbox" required class="form-input-inputbutton">I accept the terms and privacy</label>
-            
-
- 
+                <div>
+                    <label><input type="checkbox" required class="form-input-inputbutton">I accept the terms and privacy</label>
+                    <small>Teste</small>
+                </div>
+        
                 <input type="submit" value="Register" class="form-input-button" id="button">
             </div>
         </form>
@@ -144,12 +150,22 @@
     border:none;
     cursor: pointer;
     margin-left: 220px;
-    margin-top: 150px
+    margin-top: 50px
 }
 
 .Down{
     display: flex;
     align-items: space-between;
     justify-content: space-between;
+}
+
+small {
+display: flex;
+font-family: "Nunito", Arial, Helvetica, sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 16px;
+color: #FF4B4B;
 }
 </style>
