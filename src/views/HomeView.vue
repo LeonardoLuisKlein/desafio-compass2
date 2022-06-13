@@ -47,8 +47,5 @@ img{
     margin-left: auto;
 }
 
-.home{
-    visibility: hidden;
-}
 }
 </style>

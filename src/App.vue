@@ -2,8 +2,7 @@
   <div id="app">
       <section>
         <router-view>
-        <HomeView />
-        <Sucess />
+          <HomeView />
         </router-view>
       </section>
   </div>
@@ -12,12 +11,9 @@
 <script>
 import HomeView from './views/HomeView.vue'
 
-import Sucess from './views/Sucess.vue'
-
   export default{
     components: {
-      HomeView,
-      Sucess
+      HomeView
     }
   }
   

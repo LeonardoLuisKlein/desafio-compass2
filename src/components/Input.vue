@@ -37,17 +37,19 @@
                     <small>Teste</small>
                 </div>
                 <div class="order6">
-                <input type="submit" value="Register" class="form-input-button" id="button">
+                <button type="submit" value="Register" class="form-input-button" id="button"><router-link :to="'/sucess'">Sucess</router-link></button>
                 </div>
         </form>
     </div>
 </template>
 
 <script>
+import Button from './Button.vue'
 
 export default{
     name: 'Input',
-    data(){
+  
+        data(){
 
     }, 
 }
@@ -168,7 +170,11 @@ font-weight: 400;
 font-size: 14px;
 line-height: 16px;
 color: #FF4B4B;
-visibility: hidden;
+}
+
+button{
+    text-decoration: none;
+    text-decoration-color: white;
 }
 
 @media screen and (max-width: 600px) {

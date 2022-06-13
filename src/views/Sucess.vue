@@ -2,12 +2,14 @@
     <div clas="sucess">
         <img src="../intern.png">
         <h1>Sucess!</h1>
-        <input type="submit" value="Go back!" @submit="gohome">
+        <button type="submit" ><router-link :to="'/home'">Go back!</router-link></button>
     </div>
 </template>
 
 <script>
+import Button from '@/components/Button.vue'
 export default{
+  components: { Button },
     name:'Sucess',
     methods(){
         gohome()
@@ -36,7 +38,7 @@ export default{
     margin: auto
     }
 
-input{
+button{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,6 +59,7 @@ input{
     border: #0DBDBD;
     margin: 300px auto;
     cursor: pointer;
+    text-decoration: none;
     }
 
 
