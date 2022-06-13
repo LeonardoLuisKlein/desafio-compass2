@@ -1,44 +1,44 @@
 <template>
     <div>
         <form>
-            <div>
+            <div class="order0">
                 <label for="fullname">Full Name *</label>
                 <input type="text" id="fullname" class="form-input-name" required>
                 <small>Teste</small>
             </div>
 
-            <div>
+            <div class="order1">
                 <label for="email">Email *</label>
                 <input type="email" id="email" class="form-input-email" placeholder="foo@bar.com" required>
                 <small>Teste</small>
             </div>
 
-            <div class="form-pb">
+            <div class="form-pb order3">
                 <label for="phone">Phone *</label>
                 <input type="tel" id="phone" class="form-input-phone" placeholder="(83) 00000-0000" required>
                 <small>Teste</small>
             </div>
 
-            <div>
+            <div class="order2">
                 <label for="password">Password *</label>
                 <input type="password" id="password" class="form-input-password" required>
                 <small>Teste</small>
             </div>
 
-            <div class="form-pb">
+            <div class="form-pb order4">
                 <label for="birthday">Birthday *</label>
                 <input type="date" id="birthday" class="form-input-birthday" value="yyyy/MM/dd" required>
                 <small>Teste</small>
             </div>
 
-            <div class="Down">
-                <div>
+        
+                <div class="order5">
                     <label><input type="checkbox" required class="form-input-inputbutton">I accept the terms and privacy</label>
                     <small>Teste</small>
                 </div>
-        
+                <div class="order6">
                 <input type="submit" value="Register" class="form-input-button" id="button">
-            </div>
+                </div>
         </form>
     </div>
 </template>
@@ -153,11 +153,6 @@
     margin-top: 50px
 }
 
-.Down{
-    display: flex;
-    align-items: space-between;
-    justify-content: space-between;
-}
 
 small {
 display: flex;
@@ -167,5 +162,96 @@ font-weight: 400;
 font-size: 14px;
 line-height: 16px;
 color: #FF4B4B;
+}
+
+@media screen and (max-width: 600px) {
+
+  label{
+    font-family: "Nunito", Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: flex-end;
+    color: #767676;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+
+.form-input-name, .form-input-email, .form-input-password{
+box-sizing: border-box;
+width: 330px;
+height: 40px;
+left: 36px;
+top: 482px;
+background: #FFFFFF;
+border: 2px solid #AAAAAA;
+border-radius: 4px;
+}
+
+.form-input-phone, .form-input-birthday{
+box-sizing: border-box;
+width: 155px;
+height: 40px;
+left: 36px;
+top: 482px;
+background: #FFFFFF;
+border: 2px solid #AAAAAA;
+border-radius: 4px;
+}
+
+.form-input-button{
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px 12px;
+gap: 6px;
+width: 332px;
+height: 56px;
+left: 36px;
+top: 690px;
+background: #0DBDBD;
+border-radius: 10px;
+margin-top: 70px;
+margin-left: 100px;
+}
+
+    .order0{
+        order:0;
+        margin-left: 100px;
+    }
+
+    .order1{
+        order:1;
+        margin-left: 100px;
+    }
+
+    .order2{
+        order:2;
+        margin-left: 100px;
+    }
+
+    .order3{
+        order:3;
+        margin-left: 100px;
+    }
+
+    .order4{
+        order: 4;
+        margin-left: 20px;
+    }
+
+    .order5{
+        order:5;
+        margin-left: 150px;
+    }
+
+    .order6{
+        order:6;
+        margin-top: -40px;
+    }
+
+
+
 }
 </style>

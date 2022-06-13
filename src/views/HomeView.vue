@@ -33,4 +33,16 @@ img{
     justify-content: center;
     margin: auto
     }
+
+@media screen and (max-width: 600px) {
+h1{
+    margin-top: auto;
+    margin-left: auto;   
+}
+
+img{
+    margin-top: auto;
+    margin-left: auto;
+}
+}
 </style>

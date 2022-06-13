@@ -42,4 +42,24 @@ section{
   margin-top: 50px;
 }
 
+@media screen and (max-width: 600px) {
+body {
+    background: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Nunito", Arial, Helvetica, sans-serif;
+    color: #222222;
+}
+
+section{
+  margin-top: 0px;
+  display: flex;
+  left: 16px;
+  right: 16px;
+  top: 16px;
+  bottom: 16px;
+}
+}
+
 </style>
