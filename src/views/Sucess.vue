@@ -2,7 +2,7 @@
     <div clas="sucess">
         <img src="../intern.png">
         <h1>Sucess!</h1>
-        <button type="submit" ><router-link :to="'/home'">Go back!</router-link></button>
+        <button type="submit" @click="goHome"><router-link :to="'/home'">Go back!</router-link></button>
     </div>
 </template>
 
@@ -11,8 +11,10 @@ import Button from '@/components/Button.vue'
 export default{
   components: { Button },
     name:'Sucess',
-    methods(){
-        gohome()
+    methods:{
+        goHome: function(e){
+            e.preventDefault()
+        }
 
         
     }

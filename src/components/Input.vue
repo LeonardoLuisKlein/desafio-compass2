@@ -1,43 +1,45 @@
 <template>
     <div>
-        <form>
+        <form id="input" @submit="checkForm" novalidate="true" method="post" action="https://vuejs.org/">
             <div class="order0">
                 <label for="fullname">Full Name *</label>
-                <input type="text" id="fullname" class="form-input-name">
-                <small>Teste</small>
+                <input type="text" id="fullname" class="form-input-name" v-model="fullname" name="fullname">
+                <small v-for="error in errors" v-bind:key="error.name">{{ errors[0] }}</small>
             </div>
 
             <div class="order1">
                 <label for="email">Email *</label>
-                <input type="email" id="email" class="form-input-email" placeholder="foo@bar.com">
-                <small>Teste</small>
+                <input type="email" id="email" class="form-input-email" placeholder="foo@bar.com" v-model="email" name="email">
+                <div>
+                <small v-for="error in errors" v-bind:key="error.email">{{ error }}</small>
+                </div>
             </div>
 
             <div class="form-pb order3">
                 <label for="phone">Phone *</label>
-                <input type="tel" id="phone" class="form-input-phone" placeholder="(83) 00000-0000">
-                <small>Teste</small>
+                <input type="tel" id="phone" class="form-input-phone" placeholder="(83) 00000-0000" v-model="phone" name="phone">
+                <small v-for="error in errors" v-bind:key="error.phone">{{ error }}</small>
             </div>
 
             <div class="order2">
                 <label for="password">Password *</label>
-                <input type="password" id="password" class="form-input-password">
-                <small>Teste</small>
+                <input type="password" id="password" class="form-input-password" v-model="password" name="password">
+                <small v-for="error in errors" v-bind:key="error.password">{{ error }}</small>
             </div>
 
             <div class="form-pb order4">
                 <label for="birthday">Birthday *</label>
-                <input type="date" id="birthday" class="form-input-birthday" value="yyyy/MM/dd">
-                <small>Teste</small>
+                <input type="date" id="birthday" class="form-input-birthday" value="yyyy/MM/dd" v-model="birthday" name="birthday">
+                <small v-for="error in errors" v-bind:key="error.birthday">{{ error }}</small>
             </div>
 
         
                 <div class="order5">
-                    <label><input type="checkbox" class="form-input-inputbutton">I accept the terms and privacy</label>
-                    <small>Teste</small>
+                    <label><input type="checkbox" class="form-input-inputbutton" id="contract-terms">I accept the terms and privacy</label>
+                    <small v-for="error in errors" v-bind:key="error.contract-terms">{{ error }}</small>
                 </div>
                 <div class="order6">
-                <button type="submit" value="Register" class="form-input-button" id="button"><router-link :to="'/sucess'">Sucess</router-link></button>
+                <button type="submit" class="form-input-button" id="button" @submit="checkForm"><router-link :to="'/sucess'">Register</router-link></button>
                 </div>
         </form>
     </div>
@@ -48,11 +50,73 @@ import Button from './Button.vue'
 
 export default{
     name: 'Input',
-  
-        data(){
+    data(){
+        return{
+        errors: [],
+        fullname: null,
+        email: null,
+        phone: null,
+        password: null,
+        birthday: null
+        }
+    },
+    methods:{
+        checkForm: function(e){
+            e.preventDefault();
+            this.errors = [];
 
-    }, 
+            if (!this.validName(this.fullname)){
+                this.errors.push('Fullname Invalid')
+            }
+
+            if (!this.validEmail(this.email)){
+                this.errors.push('Email Invalid')
+            }
+
+
+            if (!this.validPhone(this.phone)){
+                this.errors.push('Phone Invalid')
+            }
+
+            if (!this.validPassword(this.password)){
+                this.errors.push('Password Invalid')
+            }
+
+           /* if (!this.validBirthday(this.birthday)){
+                this.errors.push('Age Invalid')
+            }*/
+
+            let checkbox = document.getElementById('contract-terms')
+            if(!checkbox.checked) {
+                this.errors.push('You must accept the terms')
+            }
+
+            if(!this.errors.length) {
+                return true;
+            }        
+        },
+        validName: function (fullname) {
+      var re = /^[a-zA-Z\u00C0-\u017F´]+\s+[a-zA-Z\u00C0-\u017F´]{0,}$/;
+      return re.test(fullname);
+    },
+        validEmail: function (email) {
+      var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(email);
+    },
+        validPhone: function (phone) {
+      var re = /^[0-9]{11}$/;
+      return re.test(phone);
+    },
+        validPassword: function (password) {
+        var re = /^[0-9]{6,9}$/;
+        return re.test(password)
+    },
+       /* validBirthday: function (birthday) {
+        
+        }*/
+    }
 }
+ 
 </script>
 
 <style scoped>
@@ -175,6 +239,11 @@ color: #FF4B4B;
 button{
     text-decoration: none;
     text-decoration-color: white;
+}
+
+a{
+    text-decoration: none;
+    color: white;
 }
 
 @media screen and (max-width: 600px) {

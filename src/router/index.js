@@ -26,6 +26,10 @@ const routes = [
   {
     path: '',
     redirect: '/home'
+  },
+  {
+    path: '/home?',
+    redirect: '/sucess'
   }
 ]
 
