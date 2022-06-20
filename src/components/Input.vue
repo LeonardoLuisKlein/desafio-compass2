@@ -4,7 +4,7 @@
             <div class="order0">
                 <label for="fullname">Full Name *</label>
                 <input type="text" id="fullname" class="form-input-name" v-model="fullname" name="fullname">
-                <small v-for="error in errors" v-bind:key="error.name">{{ errors[0] }}</small>
+                <small v-for="error in errors" v-bind:key="error.name">{{ error }}</small>
             </div>
 
             <div class="order1">
@@ -39,7 +39,7 @@
                     <small v-for="error in errors" v-bind:key="error.contract-terms">{{ error }}</small>
                 </div>
                 <div class="order6">
-                <button type="submit" class="form-input-button" id="button" @submit="checkForm"><router-link :to="'/sucess'">Register</router-link></button>
+                <button type="submit" class="form-input-button" id="button"><router-link :to="'/sucess'">Register</router-link></button>
                 </div>
         </form>
     </div>
@@ -59,7 +59,9 @@ export default{
         password: null,
         birthday: null
         }
-    },
+    }
+}
+    /*
     methods:{
         checkForm: function(e){
             e.preventDefault();
@@ -84,7 +86,7 @@ export default{
 
            /* if (!this.validBirthday(this.birthday)){
                 this.errors.push('Age Invalid')
-            }*/
+            }
 
             let checkbox = document.getElementById('contract-terms')
             if(!checkbox.checked) {
@@ -114,8 +116,8 @@ export default{
        /* validBirthday: function (birthday) {
         
         }*/
-    }
-}
+  //  }
+//}
  
 </script>
 

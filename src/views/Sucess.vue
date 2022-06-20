@@ -64,6 +64,10 @@ button{
     text-decoration: none;
     }
 
+a{
+    text-decoration: none;
+    color: white;
+}
 
     @media screen and (max-width: 600px) {
 input{
